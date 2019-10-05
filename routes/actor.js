@@ -1,6 +1,12 @@
 var express = require('express');
+var actorsController = require('../controllers/actors');
+
+const { getAllActors, updateActor, getStreak } = actorsController
+
 var router = express.Router();
 
-// Routes related to actor.
+router.get('/', getAllActors);
+router.get('/streak', getStreak);
+router.put('/', updateActor);
 
 module.exports = router;
